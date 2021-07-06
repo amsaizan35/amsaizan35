@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="1213.0" style="-fx-background-color: #CAFBD9" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+    <children>
+        <AnchorPane layoutX="23.0" layoutY="107.0" prefHeight="302.0" prefWidth="254.0" style="-fx-border-color: black; -fx-border-radius: 25;">
+            <Button fx:id="allCustomersButton" layoutX="64.0" layoutY="181.0" mnemonicParsing="false" onAction="#ActionAllCustomersButton" prefHeight="26.0" prefWidth="118.0" text="All Customers" />
+         <Label layoutX="13.0" layoutY="9.0" prefHeight="39.0" prefWidth="224.0" text="             Welcome, ">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font></Label>
+         <Button fx:id="exitButton" layoutX="77.0" layoutY="238.0" mnemonicParsing="false" onAction="#handlerExit" prefHeight="26.0" prefWidth="86.0" text="Exit" />
+         <Button fx:id="apptButt" layoutX="60.0" layoutY="124.0" mnemonicParsing="false" onAction="#handlerApptButt" prefHeight="26.0" prefWidth="134.0" text="All Appointments" />
+         <Label fx:id="nameLabel" layoutX="71.0" layoutY="54.0" prefHeight="27.0" prefWidth="104.0">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+            <children>
+                
+            </children>
+        </AnchorPane>
+        <TableView fx:id="apptTable" layoutX="295.0" layoutY="51.0" prefHeight="198.0" prefWidth="847.0">
+            <columns>
+                <TableColumn fx:id="apptIDCol" prefWidth="53.20001220703125" text="Appt ID" />
+                <TableColumn fx:id="titleCol" prefWidth="76.60000610351562" text="Title" />
+                <TableColumn fx:id="descCol" prefWidth="93.79998779296875" text="Description" />
+                <TableColumn fx:id="locatCol" prefWidth="88.5999755859375" text="Location" />
+                <TableColumn fx:id="typeCol" prefWidth="107.5999755859375" text="Type" />
+                <TableColumn fx:id="startCol" prefWidth="138.39996337890625" text="Start" />
+                <TableColumn fx:id="endCol" prefWidth="123.20001220703125" text="End" />
+            <TableColumn fx:id="custidcol" prefWidth="79.5999755859375" text="Customer ID" />
+            <TableColumn fx:id="contidcol" prefWidth="82.4000244140625" text="Contact ID" />
+            </columns>
+        </TableView>
+        <TableView fx:id="custTable" layoutX="335.0" layoutY="316.0" prefHeight="174.0" prefWidth="270.0">
+            <columns>
+                <TableColumn fx:id="custIDCol" prefWidth="85.20001220703125" text="Customer ID" />
+                <TableColumn fx:id="custNameCol" prefWidth="183.99997558593748" text="Customer Name" />
+            </columns>
+        </TableView>
+        <Button fx:id="addApptBut" layoutX="361.0" layoutY="265.0" mnemonicParsing="false" onAction="#actionAddApptBut" prefHeight="26.0" prefWidth="134.0" text="Add Appointment" />
+        <Button fx:id="updateApptBut" layoutX="560.0" layoutY="265.0" mnemonicParsing="false" onAction="#actionUpdateButt" prefHeight="26.0" prefWidth="142.0" text="Update Appointment" />
+        <Button fx:id="deleteApptButt" layoutX="770.0" layoutY="265.0" mnemonicParsing="false" onAction="#actionDeleteApptBut" prefHeight="26.0" prefWidth="150.0" text="Delete Appointment" />
+        <TableView fx:id="contTable" layoutX="722.0" layoutY="334.0" prefHeight="130.0" prefWidth="378.0">
+            <columns>
+                <TableColumn fx:id="contIDCol" prefWidth="72.0" text="Contact ID" />
+                <TableColumn fx:id="contNameCol" prefWidth="142.39996337890625" text="Contact Name" />
+                <TableColumn fx:id="emailCol" prefWidth="164.0" text="Email" />
+            </columns>
+        </TableView>
+      <Label layoutX="579.0" prefHeight="51.0" prefWidth="199.0" text="Users Appointments">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="reportBut" layoutX="1014.0" layoutY="265.0" mnemonicParsing="false" onAction="#handlerReport" prefHeight="26.0" prefWidth="85.0" text="Reports" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="386.0" prefWidth="1088.0" style="-fx-background-color: #CAFBD9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomersDAOImpl">
+    <children>
+        <AnchorPane layoutX="734.0" layoutY="39.0" prefHeight="294.0" prefWidth="303.0" style="-fx-border-color: black; -fx-border-radius: 20;">
+         <children>
+              <Button fx:id="addButton" layoutX="21.0" layoutY="260.0" mnemonicParsing="false" onAction="#onActionAddButton" prefHeight="26.0" prefWidth="110.0" text="Add Customer" />
+              <Button fx:id="submitButton" layoutX="163.0" layoutY="260.0" mnemonicParsing="false" onAction="#ActionSubmitButton" prefHeight="26.0" prefWidth="110.0" text="Submit Update" />
+         </children></AnchorPane>
+        <Label layoutX="293.0" layoutY="48.0" text="Customers">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Label>
+        <TableView fx:id="customerTable" layoutX="35.0" layoutY="103.0" prefHeight="130.0" prefWidth="634.0">
+            <columns>
+                <TableColumn fx:id="custIDCol" prefWidth="49.600006103515625" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="112.99999237060547" text="Customer Name" />
+                <TableColumn fx:id="addressCol" prefWidth="146.20001220703125" text="Address" />
+                <TableColumn fx:id="firstLevelCol" prefWidth="112.4000244140625" text="First-Level Div" />
+                <TableColumn fx:id="countryCol" prefWidth="55.800079345703125" text="Country" />
+                <TableColumn fx:id="postalCol" prefWidth="74.0" text="Postal Code" />
+                <TableColumn fx:id="phoneCol" prefWidth="86.0" text="Phone" />
+            </columns>
+        </TableView>
+        <TextField fx:id="custIDText" disable="true" editable="false" layoutX="860.0" layoutY="75.0" onAction="#ActionCustIDText" promptText="Auto-Generated" />
+        <TextField fx:id="nameText" layoutX="860.0" layoutY="105.0" onAction="#ActionNameText" promptText="Customer Name" />
+        <TextField fx:id="addressText" layoutX="860.0" layoutY="136.0" onAction="#ActionAddressText" promptText="Address" />
+        <ComboBox fx:id="countryCombo" layoutX="859.0" layoutY="168.0" onAction="#ActionCountryCombo" prefWidth="150.0" promptText=" Country..." />
+        <ComboBox fx:id="firstLevelCombo" layoutX="859.0" layoutY="200.0" onAction="#ActionFirstLevelCombo" prefWidth="150.0" promptText="First Level Division .." />
+        <TextField fx:id="postalText" layoutX="860.0" layoutY="234.0" onAction="#ActionPostalText" promptText="Postal Code" />
+        <TextField fx:id="phoneText" layoutX="860.0" layoutY="267.0" onAction="#ActionPhoneText" promptText="Phone" />
+        <Label layoutX="760.0" layoutY="78.0" prefHeight="18.0" prefWidth="99.0" text="Customer ID" />
+        <Label layoutX="760.0" layoutY="108.0" prefHeight="18.0" prefWidth="99.0" text="Customer Name" />
+        <Label layoutX="760.0" layoutY="139.0" prefHeight="18.0" prefWidth="99.0" text="Address" />
+        <Label layoutX="760.0" layoutY="171.0" prefHeight="18.0" prefWidth="99.0" text="Country" />
+        <Label layoutX="760.0" layoutY="203.0" prefHeight="18.0" prefWidth="99.0" text="First Level Division" />
+        <Label layoutX="760.0" layoutY="237.0" prefHeight="18.0" prefWidth="99.0" text="Postal Code" />
+        <Label layoutX="760.0" layoutY="270.0" prefHeight="18.0" prefWidth="99.0" text="Phone" />
+        <Button fx:id="updateButton" layoutX="345.0" layoutY="246.0" mnemonicParsing="false" onAction="#onActionUpdateButton" prefHeight="26.0" prefWidth="110.0" text="Update Customer" />
+        <Button fx:id="cancelButton" layoutX="550.0" layoutY="246.0" mnemonicParsing="false" onAction="#onActionCancelButton" prefHeight="26.0" prefWidth="82.0" text="Cancel" />
+        <Button fx:id="custApptButton" layoutX="105.0" layoutY="246.0" mnemonicParsing="false" onAction="#ActioncustApptButton" prefHeight="26.0" prefWidth="109.0" text="Customer Appts" />
+        <Button fx:id="exitButton" layoutX="550.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionExit" prefHeight="26.0" prefWidth="82.0" text="Exit" />
+        <Button fx:id="deleteButton" layoutX="345.0" layoutY="287.0" mnemonicParsing="false" onAction="#onActionDeleteButton" prefHeight="26.0" prefWidth="110.0" text="Delete Customer" />
+        <Button fx:id="allCustButton" layoutX="105.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionAllCustButt" prefHeight="26.0" prefWidth="110.0" text="All Customers" />
+      <Button fx:id="allApptBut" layoutX="215.0" layoutY="345.0" mnemonicParsing="false" onAction="#handlerAllAppts" prefHeight="26.0" prefWidth="120.0" text="All Appointments" />
+    </children>
+</AnchorPane>

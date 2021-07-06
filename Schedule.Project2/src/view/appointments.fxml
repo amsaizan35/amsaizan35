@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1214.0" style="-fx-background-color: #CAFBD9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsDAOImpl">
+    <children>
+        <AnchorPane layoutX="66.0" layoutY="424.0" prefHeight="267.0" prefWidth="606.0" style="-fx-border-color: black; -fx-border-radius: 20;">
+            <children>
+                <ComboBox fx:id="custCombo" layoutX="294.0" layoutY="28.0" onAction="#ActionCustCombo" prefHeight="26.0" prefWidth="118.0" promptText="Customers" />
+              <Label layoutX="39.0" layoutY="11.0" prefHeight="18.0" prefWidth="58.0" text="User ID" />
+              <TextField fx:id="userIdText" layoutX="134.0" layoutY="7.0" onAction="#onActionUserIDText" prefHeight="26.0" prefWidth="118.0" promptText="user ID" />
+              <Label layoutX="310.0" layoutY="100.0" prefHeight="18.0" prefWidth="103.0" text="Start Date / Time" />
+              <DatePicker fx:id="startDatePicker" layoutX="303.0" layoutY="124.0" onAction="#onActionStartDatePicker" prefHeight="26.0" prefWidth="118.0" promptText="Start Date" />
+              <ComboBox fx:id="startTimeCombo" layoutX="304.0" layoutY="160.0" onAction="#onActionStartTimeCombo" prefHeight="26.0" prefWidth="118.0" promptText="start time" />
+              <Label layoutX="439.0" layoutY="99.0" prefHeight="18.0" prefWidth="96.0" text="End Date/Time" />
+              <DatePicker fx:id="endDatePicker" layoutX="439.0" layoutY="124.0" onAction="#onActionEndPicker" prefHeight="26.0" prefWidth="118.0" promptText="end date" />
+              <ComboBox fx:id="endTimeComco" layoutX="439.0" layoutY="160.0" onAction="#onActionEndTimeComco" prefHeight="26.0" prefWidth="118.0" promptText=" end time" />
+              <ComboBox fx:id="contactCombo" layoutX="450.0" layoutY="28.0" onAction="#onActionContactCombo" prefHeight="26.0" prefWidth="118.0" promptText="Contacts" />
+              <TextField fx:id="locationText" layoutX="135.0" layoutY="182.0" onAction="#onActionLocationText" prefHeight="26.0" prefWidth="118.0" promptText="location" />
+              <TextField fx:id="typeText" layoutX="135.0" layoutY="147.0" onAction="#onActionTypeText" prefHeight="26.0" prefWidth="118.0" promptText="type" />
+              <TextField fx:id="descriptinText" layoutX="134.0" layoutY="109.0" onAction="#onActionDescriptionText" prefHeight="26.0" prefWidth="118.0" promptText="description" />
+              <TextField fx:id="titleText" layoutX="135.0" layoutY="74.0" onAction="#onActionTitleText" prefHeight="26.0" prefWidth="118.0" promptText="title" />
+              <TextField fx:id="apptIdText" disable="true" editable="false" layoutX="135.0" layoutY="38.0" onAction="#onActionApptID" prefHeight="26.0" prefWidth="117.0" promptText="AUTO_GENERATED" />
+              <Label layoutX="39.0" layoutY="41.0" prefHeight="18.0" prefWidth="96.0" text="Appointment ID" />
+              <Label layoutX="39.0" layoutY="78.0" prefHeight="18.0" prefWidth="96.0" text="Title" />
+              <Label layoutX="39.0" layoutY="186.0" prefHeight="18.0" prefWidth="58.0" text="Location" />
+              <Label layoutX="39.0" layoutY="151.0" prefHeight="18.0" prefWidth="96.0" text="Type" />
+              <Label layoutX="39.0" layoutY="113.0" prefHeight="18.0" prefWidth="96.0" text="Description" />
+              <Button fx:id="cancelButton" cancelButton="true" layoutX="56.0" layoutY="226.0" mnemonicParsing="false" onAction="#onActionCancelButton" prefHeight="26.0" prefWidth="123.0" text="Clear Fields" />
+              <Button fx:id="submitButton" layoutX="238.0" layoutY="223.0" mnemonicParsing="false" onAction="#onActionSubmit" prefHeight="26.0" prefWidth="134.0" text="Submit Update" />
+              <Button fx:id="addButton" layoutX="445.0" layoutY="222.0" mnemonicParsing="false" onAction="#onActionAddButton" prefHeight="26.0" prefWidth="134.0" text="Add Appointment" />
+            </children></AnchorPane>
+        <Label layoutX="50.0" layoutY="32.0" text="Schedule of Appointments">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TableView fx:id="appointmentTable" layoutX="36.0" layoutY="119.0" prefHeight="222.0" prefWidth="1112.0">
+            <columns>
+                <TableColumn fx:id="apptIDCol" prefWidth="75.59999084472656" text="Appt ID" />
+                <TableColumn fx:id="titleCol" prefWidth="113.0000228881836" text="Title" />
+                <TableColumn fx:id="descriptionCol" prefWidth="134.20001220703125" text="Description" />
+                <TableColumn fx:id="locationCol" prefWidth="115.39996337890625" text="Location" />
+                <TableColumn fx:id="typeCol" prefWidth="113.19998168945312" text="Type" />
+                <TableColumn fx:id="startCol" prefWidth="146.20001220703125" text="Start Date/Time" />
+                <TableColumn fx:id="endCol" prefWidth="154.99993896484375" text="End Date/Time" />
+                <TableColumn fx:id="customerCol" prefWidth="89.0" text="Customer ID" />
+                <TableColumn fx:id="userIdCol" prefWidth="78.5999755859375" text="User ID" />
+                <TableColumn fx:id="contactIDCol" prefWidth="85.5999755859375" text="Contact ID" />
+
+            </columns>
+        </TableView>
+        <RadioButton fx:id="weekRB" layoutX="457.0" layoutY="28.0" mnemonicParsing="false" onAction="#onActionRadioToggle" text="BY WEEK">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="apptView" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="monthRB" layoutX="574.0" layoutY="28.0" mnemonicParsing="false" onAction="#onActionRadioToggle" text="BY MONTH" toggleGroup="$apptView">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="allRB" layoutX="381.0" layoutY="28.0" mnemonicParsing="false" onAction="#onActionRadioToggle" selected="true" text="All " toggleGroup="$apptView">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </RadioButton>
+        <Button fx:id="deleteButton" layoutX="592.0" layoutY="366.0" mnemonicParsing="false" onAction="#onActionDeleteButton" prefHeight="27.0" prefWidth="133.0" text="Delete Appointment" />
+        <Button fx:id="toCustButton" layoutX="1015.0" layoutY="366.0" mnemonicParsing="false" onAction="#ActionToCustButton" prefHeight="26.0" prefWidth="123.0" text="All Customers" />
+        <Button fx:id="allApptButton" layoutX="138.0" layoutY="366.0" mnemonicParsing="false" onAction="#ActionApptButton" prefHeight="26.0" prefWidth="146.0" text="All Appointments" />
+        <Label fx:id="userLabel" layoutX="369.0" layoutY="59.0" prefHeight="34.0" prefWidth="399.0" style="-fx-font-size: 18;">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="contApptButton" layoutX="934.0" layoutY="463.0" mnemonicParsing="false" onAction="#actionContApptBut" prefHeight="26.0" prefWidth="162.0" text="Contact Appointments" />
+      <Label fx:id="welcomeLabel" layoutX="130.0" layoutY="59.0" prefHeight="34.0" prefWidth="198.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+        <Button fx:id="updateButton" layoutX="418.0" layoutY="366.0" mnemonicParsing="false" onAction="#onActionUpdateButtton" prefHeight="27.0" prefWidth="134.0" text="Update Appointment" />
+        <Button fx:id="exitButton" layoutX="966.0" layoutY="632.0" mnemonicParsing="false" onAction="#ActionExit" prefHeight="26.0" prefWidth="123.0" text="Exit" />
+      <Button fx:id="userAppt" layoutX="754.0" layoutY="463.0" mnemonicParsing="false" onAction="#handlerUserAppt" prefHeight="26.0" prefWidth="134.0" text="User Appointments" />
+      <Button fx:id="reportBut" layoutX="843.0" layoutY="517.0" mnemonicParsing="false" onAction="#hadlerReports" prefHeight="26.0" prefWidth="123.0" text="Reports" />
+      <Button fx:id="custApptBut" layoutX="833.0" layoutY="411.0" mnemonicParsing="false" onAction="#handlerCustAppt" prefHeight="26.0" prefWidth="162.0" text="Customer Appointments" />
+    </children>
+
+
+</AnchorPane>

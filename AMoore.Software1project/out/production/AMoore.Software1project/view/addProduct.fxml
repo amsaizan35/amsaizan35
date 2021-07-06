@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="593.0" prefWidth="887.0" style="-fx-background-color: #E5F8F7;"    xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProductController">
+    <children>
+        <AnchorPane layoutX="21.0" layoutY="38.0" prefHeight="537.0" prefWidth="836.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+            <children>
+                <TextField fx:id="partsSearchText" layoutX="659.0" layoutY="14.0" onAction="#partsSearchTextAction" promptText="Search Part Name/ID" />
+                <TableView fx:id="partsTable" layoutX="433.0" layoutY="48.0" prefHeight="144.0" prefWidth="375.0">
+                    <columns>
+                        <TableColumn fx:id="partIdCol" prefWidth="75.0" text="Part ID" />
+                        <TableColumn fx:id="partNameCol" prefWidth="100.0" text="Part Name" />
+                        <TableColumn fx:id="partInvCol" prefWidth="100.0" text="Inventory" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="100.0" text="Price/Cost" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="associatedTable" layoutX="433.0" layoutY="263.0" prefHeight="144.0" prefWidth="375.0">
+                    <columns>
+                        <TableColumn fx:id="assPartIdCol" prefWidth="75.0" text="Part ID" />
+                        <TableColumn fx:id="assPartNameCol" prefWidth="100.0" text="Part Name" />
+                        <TableColumn fx:id="assInvCol" prefWidth="100.0" text="Inventory" />
+                        <TableColumn fx:id="assPriceCol" prefWidth="100.0" text="Price/Cost" />
+                    </columns>
+                </TableView>
+                <Button fx:id="addAssociatedBut" layoutX="714.0" layoutY="209.0" mnemonicParsing="false" onAction="#addAssociatedButAction" text="Add" />
+                <Button fx:id="removeAssocBut" layoutX="648.0" layoutY="421.0" mnemonicParsing="false" onAction="#removeAssocButAction" text="Remove Associated Part" />
+                <Button fx:id="saveBut" layoutX="569.0" layoutY="483.0" mnemonicParsing="false" onAction="#saveButAction" text="Save" />
+                <Button fx:id="cancelBut" layoutX="656.0" layoutY="483.0" mnemonicParsing="false" onAction="#cancelButAction" text="Cancel" />
+                <Label layoutX="89.0" layoutY="18.0" text="Add Product">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="68.0" layoutY="124.0" text="ID" />
+                <Label layoutX="58.0" layoutY="174.0" text="Name" />
+                <Label layoutX="49.0" layoutY="226.0" text="Inventory" />
+                <Label layoutX="53.0" layoutY="281.0" text="Price/Cost" />
+                <Label layoutX="63.0" layoutY="339.0" text="Max" />
+                <Label layoutX="249.0" layoutY="339.0" text="Min" />
+                <TextField fx:id="prodIdText" disable="true" editable="false" layoutX="139.0" layoutY="120.0" onAction="#prodIdTextAction" promptText="Auto-Generated" />
+                <TextField fx:id="nameText" layoutX="139.0" layoutY="170.0" onAction="#nameTextAction" promptText="Product Name" />
+                <TextField fx:id="invText" layoutX="139.0" layoutY="222.0" onAction="#invTextAction" promptText="InStock" />
+                <TextField fx:id="priceText" layoutX="139.0" layoutY="277.0" onAction="#priceTextAction" promptText="Price/Cost" />
+                <TextField fx:id="maxText" layoutX="139.0" layoutY="335.0" onAction="#maxTextAction" prefHeight="26.0" prefWidth="66.0" promptText="Max" />
+                <TextField fx:id="minText" layoutX="288.0" layoutY="334.0" onAction="#minTextAction" prefHeight="26.0" prefWidth="66.0" promptText="Min" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

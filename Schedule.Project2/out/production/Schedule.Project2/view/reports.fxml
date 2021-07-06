@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="611.0" style="-fx-background-color: #CAFBD9" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
+   <children>
+      <Button fx:id="monthlyButton" layoutX="79.0" layoutY="83.0" mnemonicParsing="false" onAction="#handlerMonthly" text="Monthly Appointments" />
+      <Button fx:id="firstButton" layoutX="307.0" layoutY="83.0" mnemonicParsing="false" onAction="#handlerFirst" prefHeight="26.0" prefWidth="202.0" text="Amount per First Level /Country" />
+      <Label layoutX="228.0" layoutY="24.0" prefHeight="35.0" prefWidth="112.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="monthlyTable" layoutX="23.0" layoutY="128.0" prefHeight="200.0" prefWidth="237.0">
+        <columns>
+          <TableColumn fx:id="amountColMon" prefWidth="61.19999694824219" text="Amount" />
+          <TableColumn fx:id="typeColMon" prefWidth="84.60000610351562" text="Type" />
+            <TableColumn fx:id="monthColMon" prefWidth="94.59996032714844" text="Month" />
+        </columns>
+      </TableView>
+      <TableView fx:id="divTable" layoutX="292.0" layoutY="128.0" prefHeight="200.0" prefWidth="244.0">
+        <columns>
+          <TableColumn fx:id="amtColFirst" prefWidth="63.79998779296875" text="Amount" />
+          <TableColumn fx:id="firstColFirst" prefWidth="98.0" text="First Level Div" />
+            <TableColumn fx:id="countryColMon" prefWidth="82.0" text="Country" />
+        </columns>
+      </TableView>
+      <Button fx:id="apptBut" layoutX="123.0" layoutY="347.0" mnemonicParsing="false" onAction="#handlerAppts" text="Appointments" />
+      <Button fx:id="exitBut" layoutX="388.0" layoutY="347.0" mnemonicParsing="false" onAction="#handlerExit" prefHeight="26.0" prefWidth="84.0" text="Exit" />
+   </children>
+</AnchorPane>
